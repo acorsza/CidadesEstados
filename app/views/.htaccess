@@ -1,0 +1,20 @@
+#Options -MultiViews
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^api\.aderleifilho\.com$
+RewriteCond %{REQUEST_URI} !^/api/CidadesEstados/public/
+RewriteRule (.*) /api/CidadesEstados/public/$1 [L]
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+
+RewriteEngine on
+
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress

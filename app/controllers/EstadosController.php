@@ -1,6 +1,6 @@
 <?php
 
-class HomeController extends BaseController {
+class EstadosController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -15,9 +15,8 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function home()
+	public function obterEstados()
 	{
-		return View::make('home');
+		return Estado::all();
 	}
-
 }

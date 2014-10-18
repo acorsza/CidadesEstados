@@ -13,5 +13,8 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('home');
 });
+Route::get('/', array('uses' => 'HomeController@home'));
+Route::get('/obterCidadesPorEstado/{id}', array('uses' => 'CidadesController@obterCidadesPorEstado'));
+Route::get('/obterEstados', array('uses' => 'EstadosController@obterEstados'));

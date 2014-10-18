@@ -1,6 +1,6 @@
 <?php
 
-class HomeController extends BaseController {
+class CidadesController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -15,9 +15,9 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function home()
+	public function obterCidadesPorEstado($id)
 	{
-		return View::make('home');
+		$cidade = Cidade::where('estado', '=', $id)->get();
+		return $cidade->toJson(JSON_UNESCAPED_UNICODE);
 	}
-
 }
