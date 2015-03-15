@@ -15,9 +15,12 @@ class CidadesController extends BaseController {
 	|
 	*/
 
-	public function obterCidadesPorEstado($id)
+	public function obterCidadesPorEstado ( $id )
 	{
-		$cidade = Cidade::where('estado', '=', $id)->get();
-		return $cidade->toJson(JSON_UNESCAPED_UNICODE);
+		if ( $id > 0 && $id < 28 ) {
+			$cidade = Cidade::where('estado', '=', $id)->get();
+			return $cidade->toJson(JSON_UNESCAPED_UNICODE);
+		}
+		
 	}
 }
